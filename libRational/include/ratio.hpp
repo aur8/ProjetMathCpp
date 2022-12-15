@@ -4,10 +4,13 @@
 
 class rationalNumber {
 
-    double m_data;
+    public :
+
+    int m_numerator;
+    unsigned int m_denominator;
 
     //constructor
-    rationalNumber(const int Numerator=0, const int Denominator=0);
+    rationalNumber(const int numerator=0, const int denominator=0);
 
     rationalNumber(const rationalNumber &rn) = default;
 
@@ -19,9 +22,10 @@ class rationalNumber {
 
     //operators
 
-    rationalNumber& operator=(const rationalNumber &rn);
-    const rationalNumber operator+(const rationalNumber &rn);
-    const rationalNumber operator*(const rationalNumber &rn);
-    const rationalNumber operator/(const rationalNumber &rn);
-    friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
+//     rationalNumber& operator=(const rationalNumber &rn);
+//     const rationalNumber operator+(const rationalNumber &rn);
+//     const rationalNumber operator*(const rationalNumber &rn);
+//     const rationalNumber operator/(const rationalNumber &rn);
+//     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
+// 
 };

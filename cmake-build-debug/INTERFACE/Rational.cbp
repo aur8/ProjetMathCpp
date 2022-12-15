@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Rational"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\libRational\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Rational">
+				<Option output="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/libRational.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/libRational/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 Rational"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Rational/fast">
+				<Option output="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/libRational.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/libRational/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 Rational/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/cmake-build-debug/INTERFACE/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/libRational/include/ratio.hpp">
+			<Option target="Rational"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/libRational/src/ratio.cpp">
+			<Option target="Rational"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/axeld/Documents/IMAC/S3/prog/ProjetMathCpp/libRational/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libRational\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

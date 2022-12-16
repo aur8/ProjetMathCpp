@@ -13,5 +13,12 @@ int main() {
     std::cout << rn3.m_numerator << std::endl;
     std::cout << rn3.m_denominator << std::endl;
 
+    rationalNumber rn2(48, 5);
+    rn2.display();
+
+    rationalNumber rn3(19, 187);
+    rn2 = rn3;
+    rn2.display();
+
     return 0;
 }

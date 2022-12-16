@@ -41,3 +41,14 @@ rationalNumber rationalNumber::irreducible() {
 
     return *this;
 }
+
+std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
+    /*if(v.size() == 0){
+        stream << "Not initialized yet -> size is 0";
+        return stream;
+    }*/
+
+    stream << rn.m_numerator << "/" << rn.m_denominator;
+
+    return stream;
+}

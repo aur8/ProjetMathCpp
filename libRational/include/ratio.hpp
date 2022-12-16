@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <numeric>
+#include <fstream>
 
 class rationalNumber {
 
@@ -29,6 +30,6 @@ class rationalNumber {
     const rationalNumber operator+(const rationalNumber &rn);
 //     const rationalNumber operator*(const rationalNumber &rn);
 //     const rationalNumber operator/(const rationalNumber &rn);
-//     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
+    friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
 //
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include <cmath>
 #include <iostream>
+#include <numeric>
 
 class rationalNumber {
 
@@ -20,6 +21,7 @@ class rationalNumber {
 
     //methods
     void display() const;
+    rationalNumber irreducible();
 
     //operators
 

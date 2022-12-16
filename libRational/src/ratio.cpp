@@ -13,6 +13,8 @@ rationalNumber & rationalNumber::operator=(const rationalNumber &rn){
     m_numerator = rn.m_numerator;
     m_denominator = rn.m_denominator;
 
+    this->irreducible();
+
     return *this;
 }
 
@@ -22,9 +24,20 @@ const rationalNumber rationalNumber::operator+(const rationalNumber &rn){
     rationalNumber temp;
     temp.m_numerator = (m_numerator*rn.m_denominator)+(m_denominator*rn.m_numerator);
     temp.m_denominator = m_denominator*rn.m_denominator;
+
+    temp.irreducible();
+
     return temp;
 }
 
 void rationalNumber::display() const{
     std::cout << m_numerator << "/" << m_denominator << std::endl;
+}
+
+rationalNumber rationalNumber::irreducible() {
+    int gcd = std::gcd(m_numerator, m_denominator);
+    m_numerator = m_numerator/gcd;
+    m_denominator = m_denominator/gcd;
+
+    return *this;
 }

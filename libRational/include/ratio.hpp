@@ -19,13 +19,14 @@ class rationalNumber {
     ~rationalNumber() = default;
 
     //methods
+    void display() const;
 
     //operators
 
-//     rationalNumber& operator=(const rationalNumber &rn);
+    rationalNumber & operator=(const rationalNumber &rn);
     const rationalNumber operator+(const rationalNumber &rn);
 //     const rationalNumber operator*(const rationalNumber &rn);
 //     const rationalNumber operator/(const rationalNumber &rn);
 //     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
-// 
+//
 };

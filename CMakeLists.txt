@@ -11,15 +11,3 @@ include_directories(${CMAKE_SOURCE_DIR}/libRational/include) # important : other
 #add rationalSamples
 message(STATUS "rationalSamples cmake part ..." )
 add_subdirectory(rationalSamples)
-
-#[[# add myCode
-message(STATUS "myCode cmake part ..." )
-add_subdirectory(myCode)
-
-# add google test
-message(STATUS "google test cmake part ..." )
-add_subdirectory(googletest)
-
-# add myTest
-message(STATUS "myTest cmake part ..." )
-add_subdirectory(myTest)]]

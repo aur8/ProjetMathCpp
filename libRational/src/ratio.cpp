@@ -7,10 +7,21 @@ rationalNumber::rationalNumber(const int numerator, const unsigned int denominat
 
 }
 
+rationalNumber & rationalNumber::operator=(const rationalNumber &rn){
+    m_numerator = rn.m_numerator;
+    m_denominator = rn.m_denominator;
+
+    return *this;
+}
+
 
 const rationalNumber rationalNumber::operator+(const rationalNumber &rn){
 
     rationalNumber ratio();
     
     return rn;
+}
+
+void rationalNumber::display() const{
+    std::cout << m_numerator << "/" << m_denominator << std::endl;
 }

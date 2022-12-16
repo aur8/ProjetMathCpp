@@ -7,7 +7,7 @@ int main() {
     std::cout << a << std::endl;
 
     rationalNumber rn(1,3);
-
+    std::cout << rn.m_numerator << std::endl;
 
     return 0;
 }

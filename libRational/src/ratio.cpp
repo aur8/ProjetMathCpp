@@ -64,3 +64,30 @@ const rationalNumber rationalNumber::operator-(const rationalNumber &rn){
     temp.m_denominator = m_denominator*rn.m_denominator;
     return temp;
 }
+
+const rationalNumber rationalNumber::operator--(){
+    rationalNumber temp;
+    temp.m_numerator = -1*m_numerator;
+    temp.m_denominator = m_denominator;
+    return temp;
+}
+
+
+//method square
+
+rationalNumber rationalNumber::square(){
+    rationalNumber temp;
+    temp.m_numerator = m_numerator*m_numerator;
+    temp.m_denominator = m_denominator*m_denominator;
+    temp.irreducible();
+    return temp;
+}
+
+//
+// rationalNumber rationalNumber::squareRoot(){
+//     rationalNumber temp;
+//     temp.m_numerator = m_numerator;
+//     temp.m_denominator = m_denominator*m_denominator;
+//     temp.irreducible();
+//     return temp;
+// }

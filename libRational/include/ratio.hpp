@@ -22,6 +22,8 @@ class rationalNumber {
     //methods
     void display() const;
     rationalNumber irreducible();
+    rationalNumber square();
+    // rationalNumber squareRoot();
 
     //operators
 
@@ -30,6 +32,7 @@ class rationalNumber {
     const rationalNumber operator-(const rationalNumber &rn);
     const rationalNumber operator*(const rationalNumber &rn);
     const rationalNumber operator/(const rationalNumber &rn);
+    const rationalNumber operator--(); //moins unaire
 //     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
 //
 };

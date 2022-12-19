@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <numeric>
+#include <cassert>
 
 class rationalNumber {
 
@@ -23,7 +24,8 @@ class rationalNumber {
     void display() const;
     rationalNumber irreducible();
     rationalNumber square();
-    // rationalNumber squareRoot();
+    rationalNumber squareRoot();
+    rationalNumber convertFloatToRatio(const float &x, const int &nb_iter);
 
     //operators
 

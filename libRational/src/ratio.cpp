@@ -82,12 +82,14 @@ rationalNumber rationalNumber::square(){
     temp.irreducible();
     return temp;
 }
+//method square root 
+//je pense faudra ameliorer avec la fonction de conversion pour vraiment retourner un ratio
+//le assert fonctionne pas
+rationalNumber rationalNumber::squareRoot(){
+    //assert(m_numerator < 0 == true) && "SquareRoot of an negative number impossible !";
+    rationalNumber temp;
+    temp.m_numerator = sqrt(m_numerator);
+    temp.m_denominator = sqrt(m_denominator);
+    return temp;
+}
 
-//
-// rationalNumber rationalNumber::squareRoot(){
-//     rationalNumber temp;
-//     temp.m_numerator = m_numerator;
-//     temp.m_denominator = m_denominator*m_denominator;
-//     temp.irreducible();
-//     return temp;
-// }

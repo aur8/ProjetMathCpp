@@ -3,6 +3,7 @@
 #include <iostream>
 #include <numeric>
 #include <fstream>
+#include <cassert>
 
 class rationalNumber {
 
@@ -23,12 +24,20 @@ class rationalNumber {
     //methods
     void display() const;
     rationalNumber irreducible();
+    rationalNumber square();
+    rationalNumber squareRoot();
+    rationalNumber convertFloatToRatio(const float &x, const int &nb_iter);
     rationalNumber inverse();
 
     //operators
 
     rationalNumber & operator=(const rationalNumber &rn);
     const rationalNumber operator+(const rationalNumber &rn);
+    const rationalNumber operator-(const rationalNumber &rn);
+    const rationalNumber operator*(const rationalNumber &rn);
+    const rationalNumber operator/(const rationalNumber &rn);
+    const rationalNumber operator--(); //moins unaire
+//     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
 //     const rationalNumber operator*(const rationalNumber &rn);
 //     const rationalNumber operator/(const rationalNumber &rn);
     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);

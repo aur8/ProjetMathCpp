@@ -43,6 +43,57 @@ rationalNumber rationalNumber::irreducible() {
     return *this;
 }
 
+const rationalNumber rationalNumber::operator*(const rationalNumber &rn){
+    rationalNumber temp;
+    temp.m_numerator = m_numerator*rn.m_numerator;
+    temp.m_denominator = m_denominator*rn.m_denominator;
+    temp.irreducible();
+    return temp;
+}
+
+const rationalNumber rationalNumber::operator/(const rationalNumber &rn){
+    rationalNumber temp;
+    temp.m_numerator = m_numerator*rn.m_denominator;
+    temp.m_denominator = m_denominator*rn.m_numerator;
+    return temp;
+}
+
+const rationalNumber rationalNumber::operator-(const rationalNumber &rn){
+    rationalNumber temp;
+    temp.m_numerator = (m_numerator*rn.m_denominator)-(m_denominator*rn.m_numerator);
+    temp.m_denominator = m_denominator*rn.m_denominator;
+    return temp;
+}
+
+const rationalNumber rationalNumber::operator--(){
+    rationalNumber temp;
+    temp.m_numerator = -1*m_numerator;
+    temp.m_denominator = m_denominator;
+    return temp;
+}
+
+
+//method square
+
+rationalNumber rationalNumber::square(){
+    rationalNumber temp;
+    temp.m_numerator = m_numerator*m_numerator;
+    temp.m_denominator = m_denominator*m_denominator;
+    temp.irreducible();
+    return temp;
+}
+//method square root
+//je pense faudra ameliorer avec la fonction de conversion pour vraiment retourner un ratio
+//le assert fonctionne pas
+rationalNumber rationalNumber::squareRoot(){
+    //assert(m_numerator < 0 == true) && "SquareRoot of an negative number impossible !";
+    rationalNumber temp;
+    temp.m_numerator = sqrt(m_numerator);
+    temp.m_denominator = sqrt(m_denominator);
+    return temp;
+}
+
+
 rationalNumber rationalNumber::inverse() {
     // insérer une exception ou assert
 

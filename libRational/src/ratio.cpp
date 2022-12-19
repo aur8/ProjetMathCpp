@@ -5,6 +5,7 @@ rationalNumber::rationalNumber(const int numerator, const unsigned int denominat
     m_numerator = numerator;
     m_denominator = denominator;
 
+    this->irreducible();
 }
 
 
@@ -40,6 +41,17 @@ rationalNumber rationalNumber::irreducible() {
     m_denominator = m_denominator/gcd;
 
     return *this;
+}
+
+rationalNumber rationalNumber::inverse() {
+    // insérer une exception ou assert
+
+    if (m_numerator != 0 && m_denominator != 0){
+        rationalNumber temp(m_denominator, m_numerator);
+        return temp;
+    }
+
+    return 0;
 }
 
 std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {

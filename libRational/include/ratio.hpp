@@ -12,7 +12,7 @@ class rationalNumber {
     unsigned int m_denominator;
 
     //constructor
-    rationalNumber(const int numerator=0, const unsigned int denominator=0);
+    rationalNumber(const int numerator=0, const unsigned int denominator=1);
 
     rationalNumber(const rationalNumber &rn) = default;
 
@@ -23,6 +23,7 @@ class rationalNumber {
     //methods
     void display() const;
     rationalNumber irreducible();
+    rationalNumber inverse();
 
     //operators
 

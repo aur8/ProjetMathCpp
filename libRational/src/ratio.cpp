@@ -119,6 +119,16 @@ rationalNumber rationalNumber::absolute(){
     }
 }
 
+int rationalNumber::integralPart(){
+    int part;
+    if (m_numerator >= 0){
+        part = floor((double)m_numerator/m_denominator);
+    } else {
+        part = ceil((double)m_numerator/m_denominator);
+    }
+    return part;
+}
+
 std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
     /*if(v.size() == 0){
         stream << "Not initialized yet -> size is 0";

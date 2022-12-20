@@ -30,6 +30,7 @@ class rationalNumber {
     rationalNumber checkNoNegativeOnDenominator();
     rationalNumber inverse() const;
     rationalNumber absolute();
+    int integralPart();
 
     //operators
 

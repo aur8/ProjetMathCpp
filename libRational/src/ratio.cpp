@@ -129,6 +129,13 @@ int rationalNumber::integralPart(){
     return part;
 }
 
+rationalNumber rationalNumber::power(int k){
+    rationalNumber temp(pow(m_numerator, k), pow(m_denominator, k));
+    return temp.irreducible();
+    // les int des numérateurs et dénominateurs ne pourront sûrement pas contenir les valeurs
+    // passé des puissances un peu élevées, il faudrait les convertir
+}
+
 std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
     /*if(v.size() == 0){
         stream << "Not initialized yet -> size is 0";

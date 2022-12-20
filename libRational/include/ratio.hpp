@@ -31,6 +31,7 @@ class rationalNumber {
     rationalNumber inverse() const;
     rationalNumber absolute();
     int integralPart();
+    rationalNumber power(int k);
 
     //operators
 

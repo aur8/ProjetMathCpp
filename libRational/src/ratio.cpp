@@ -94,15 +94,29 @@ rationalNumber rationalNumber::squareRoot(){
 }
 
 
-rationalNumber rationalNumber::inverse() {
+rationalNumber rationalNumber::inverse() const{
     // insérer une exception ou assert
 
     if (m_numerator != 0 && m_denominator != 0){
-        rationalNumber temp(m_denominator, m_numerator);
-        return temp;
+        if (m_numerator > 0){
+            rationalNumber temp((int)m_denominator, m_numerator);
+            return temp;
+        } else {
+            rationalNumber temp(-1*(int)m_denominator, -m_numerator);
+            return temp;
+        }
     }
 
     return 0;
+}
+
+rationalNumber rationalNumber::absolute(){
+    if (m_numerator < 0){
+        rationalNumber temp(-m_numerator, m_denominator);
+        return temp;
+    } else {
+        return *this;
+    }
 }
 
 std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {

@@ -27,7 +27,9 @@ class rationalNumber {
     rationalNumber square();
     rationalNumber squareRoot();
     rationalNumber convertFloatToRatio(const float &x, const int &nb_iter);
-    rationalNumber inverse();
+    rationalNumber checkNoNegativeOnDenominator();
+    rationalNumber inverse() const;
+    rationalNumber absolute();
 
     //operators
 

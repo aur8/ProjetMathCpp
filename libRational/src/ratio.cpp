@@ -183,23 +183,3 @@ std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
 
     return stream;
 }
-
-rationalNumber convertFloatToRatio(const float &x, const int &nb_iter){
-    if (x == 0){
-        return {0,1};
-    }
-
-    if (nb_iter == 0){
-        return {0, 1};
-    }
-
-    if (x < 1){
-        return convertFloatToRatio(1/x, nb_iter).power(-1);
-    }
-
-    if (x > 1){
-        int q = std::floor(x);
-        rationalNumber rn(q, 1);
-        return rn + convertFloatToRatio(x-q, nb_iter-1);
-    }
-}

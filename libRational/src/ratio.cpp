@@ -182,7 +182,7 @@ rationalNumber rationalNumber::squareRoot(){
     float x = sqrt(m_numerator);
     float y = sqrt(m_denominator);
     float res = x/y;
-    temp = convertFloatToRatio(res,20);
+    temp = convertRealToRatio(res,20);
     return temp;
 }
 
@@ -250,6 +250,6 @@ std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
 rationalNumber rationalNumber::rnCos(){
     rationalNumber temp;
     double res = cos (m_numerator/m_denominator);
-    temp = convertFloatToRatio(res,20);
+    temp = convertRealToRatio(res,20);
     return temp;
 }

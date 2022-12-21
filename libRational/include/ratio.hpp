@@ -26,9 +26,7 @@ class rationalNumber {
     rationalNumber irreducible();
     rationalNumber square();
     rationalNumber squareRoot();
-    rationalNumber convertFloatToRatio(const float &x, const int &nb_iter);
     double convertRatioToFloat() const;
-    rationalNumber checkNoNegativeOnDenominator();
     rationalNumber inverse() const;
     rationalNumber absolute();
     int integralPart();
@@ -42,12 +40,16 @@ class rationalNumber {
     const rationalNumber operator*(const rationalNumber &rn);
     const rationalNumber operator/(const rationalNumber &rn);
     const rationalNumber operator-(); //moins unaire
+
     bool operator==(const rationalNumber &rn) const;
     bool operator!=(const rationalNumber &rn) const;
     bool operator>(const rationalNumber &rn) const;
     bool operator<(const rationalNumber &rn) const;
     bool operator>=(const rationalNumber &rn) const;
     bool operator<=(const rationalNumber &rn) const;
+
     friend std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn);
 //
 };
+
+rationalNumber convertFloatToRatio(const float &x, const int &nb_iter);

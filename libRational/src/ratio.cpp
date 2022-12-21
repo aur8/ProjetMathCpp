@@ -1,5 +1,7 @@
 #include "ratio.hpp"
 
+#include <cmath>
+
 rationalNumber::rationalNumber(const int numerator, const unsigned int denominator)
 {
     m_numerator = numerator;
@@ -158,8 +160,15 @@ int rationalNumber::integralPart(){
 }
 
 rationalNumber rationalNumber::power(int k){
-    rationalNumber temp(pow(m_numerator, k), pow(m_denominator, k));
-    return temp.irreducible();
+    if (k > 0){
+        rationalNumber temp((int)pow(m_numerator, k), (unsigned int)pow(m_denominator, k));
+        return temp.irreducible();
+    } else if (k == 0){
+        return {1, 0};
+    } else if (k < 0) {
+        rationalNumber temp((int)pow(m_numerator, -k), (int)pow(m_denominator, -k));
+        return temp.inverse().irreducible();
+    }
     // les int des numérateurs et dénominateurs ne pourront sûrement pas contenir les valeurs
     // passé des puissances un peu élevées, il faudrait les convertir
 }
@@ -173,4 +182,24 @@ std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
     stream << rn.m_numerator << "/" << rn.m_denominator;
 
     return stream;
+}
+
+rationalNumber convertFloatToRatio(const float &x, const int &nb_iter){
+    if (x == 0){
+        return {0,1};
+    }
+
+    if (nb_iter == 0){
+        return {0, 1};
+    }
+
+    if (x < 1){
+        return convertFloatToRatio(1/x, nb_iter).power(-1);
+    }
+
+    if (x > 1){
+        int q = std::floor(x);
+        rationalNumber rn(q, 1);
+        return rn + convertFloatToRatio(x-q, nb_iter-1);
+    }
 }

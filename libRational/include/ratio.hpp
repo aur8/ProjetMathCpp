@@ -52,4 +52,30 @@ class rationalNumber {
 //
 };
 
-rationalNumber convertFloatToRatio(const float &x, const int &nb_iter);
+template <typename T>
+rationalNumber convertFloatToRatio(const T &x, const int &nb_iter){
+    if (std::is_floating_point<T>::value == true){
+        if (x == 0){
+            return {0,1};
+        }
+
+        if (nb_iter == 0){
+            return {0, 1};
+        }
+
+        if (x < 1){
+            return convertFloatToRatio(1/x, nb_iter).power(-1);
+        }
+
+        if (x > 1){
+            int q = std::floor(x);
+            rationalNumber rn(q, 1);
+            return rn + convertFloatToRatio(x-q, nb_iter-1);
+        }
+    } else if (std::is_integral<T>::value == true){
+        return {(int)x, 1};
+    }
+
+    // x n'est ni un point flottant ni un entier, envoyer une exception
+    return 0;
+}

@@ -3,7 +3,7 @@
 
 int main() {
 
-    rationalNumber rn1(-3,4);
+    rationalNumber rn1(1,4);
     rationalNumber rn2(-5,10);
     rationalNumber rn3 = rn1+rn2;
     rationalNumber rn4 = rn3.inverse();
@@ -28,6 +28,7 @@ int main() {
     std::cout << "8 : Rational converted from double " << x << " : " << rn8 << std::endl;
     std::cout << "9 : Rational converted from int " << y << " : " << rn9 << std::endl;
     std::cout << "10 : Rational converted from float " << z << " : " << rn10 << std::endl;
-
+    std::cout << "11 : Square root of : " << rn1 << " = " << rn1.squareRoot() << std::endl;
+    std::cout << "12 : Cos of : " << rn1 << " = " << rn1.rnCos() << std::endl;
     return 0;
 }

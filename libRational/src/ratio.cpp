@@ -65,13 +65,41 @@ const rationalNumber rationalNumber::operator-(const rationalNumber &rn){
     return temp;
 }
 
-const rationalNumber rationalNumber::operator--(){
+const rationalNumber rationalNumber::operator-(){
     rationalNumber temp;
     temp.m_numerator = -1*m_numerator;
     temp.m_denominator = m_denominator;
     return temp;
 }
 
+bool rationalNumber::operator==(const rationalNumber &rn) const{
+    return (m_numerator == rn.m_numerator) && (m_denominator == rn.m_denominator);
+}
+
+bool rationalNumber::operator!=(const rationalNumber &rn) const{
+    return (m_numerator != rn.m_numerator) || (m_denominator != rn.m_denominator);
+}
+
+bool rationalNumber::operator>(const rationalNumber &rn) const{
+    return (this->convertRatioToFloat() > rn.convertRatioToFloat());
+}
+
+bool rationalNumber::operator<(const rationalNumber &rn) const{
+    return (this->convertRatioToFloat() < rn.convertRatioToFloat());
+}
+
+bool rationalNumber::operator>=(const rationalNumber &rn) const{
+    return (this->convertRatioToFloat() >= rn.convertRatioToFloat());
+}
+
+
+bool rationalNumber::operator<=(const rationalNumber &rn) const{
+    return (this->convertRatioToFloat() <= rn.convertRatioToFloat());
+}
+
+double rationalNumber::convertRatioToFloat() const {
+    return ((double)m_numerator/m_denominator);
+}
 
 //method square
 
@@ -122,9 +150,9 @@ rationalNumber rationalNumber::absolute(){
 int rationalNumber::integralPart(){
     int part;
     if (m_numerator >= 0){
-        part = floor((double)m_numerator/m_denominator);
+        part = floor(this->convertRatioToFloat());
     } else {
-        part = ceil((double)m_numerator/m_denominator);
+        part = ceil(this->convertRatioToFloat());
     }
     return part;
 }

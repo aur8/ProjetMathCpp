@@ -179,8 +179,10 @@ rationalNumber rationalNumber::square(){
 rationalNumber rationalNumber::squareRoot(){
     //assert(m_numerator < 0 == true) && "SquareRoot of an negative number impossible !";
     rationalNumber temp;
-    temp.m_numerator = sqrt(m_numerator);
-    temp.m_denominator = sqrt(m_denominator);
+    float x = sqrt(m_numerator);
+    float y = sqrt(m_denominator);
+    float res = x/y;
+    temp = convertFloatToRatio(res,20);
     return temp;
 }
 
@@ -243,4 +245,11 @@ std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
     stream << rn.m_numerator << "/" << rn.m_denominator;
 
     return stream;
+}
+
+rationalNumber rationalNumber::rnCos(){
+    rationalNumber temp;
+    double res = cos (m_numerator/m_denominator);
+    temp = convertFloatToRatio(res,20);
+    return temp;
 }

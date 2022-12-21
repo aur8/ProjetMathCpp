@@ -34,6 +34,7 @@ class rationalNumber {
     rationalNumber absolute();
     int integralPart();
     rationalNumber power(int k);
+    rationalNumber rnCos();
 
     //operators
 

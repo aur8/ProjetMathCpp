@@ -21,8 +21,7 @@ rationalNumber & rationalNumber::operator=(const rationalNumber &rn){
     return *this;
 }
 
-
-const rationalNumber rationalNumber::operator+(const rationalNumber &rn){
+rationalNumber rationalNumber::operator+(const rationalNumber &rn) const{
 
     rationalNumber temp;
     temp.m_numerator = (m_numerator*rn.m_denominator)+(m_denominator*rn.m_numerator);
@@ -31,6 +30,16 @@ const rationalNumber rationalNumber::operator+(const rationalNumber &rn){
     temp.irreducible();
 
     return temp;
+}
+
+rationalNumber rationalNumber::operator+(const double &x) const{
+    rationalNumber rn = convertRealToRatio(x, 20);
+    return *this+rn;
+}
+
+rationalNumber operator+(const double &x, const rationalNumber &rn){
+    rationalNumber rn2 = convertRealToRatio(x, 20);
+    return rn2+rn;
 }
 
 void rationalNumber::display() const{
@@ -53,18 +62,48 @@ const rationalNumber rationalNumber::operator*(const rationalNumber &rn){
     return temp;
 }
 
-const rationalNumber rationalNumber::operator/(const rationalNumber &rn){
+rationalNumber rationalNumber::operator*(const double &x){
+    rationalNumber rn = convertRealToRatio(x, 20);
+    return *this*rn;
+}
+
+rationalNumber operator*(const double &x, const rationalNumber &rn){
+    rationalNumber rn2 = convertRealToRatio(x, 20);
+    return rn2*rn;
+}
+
+rationalNumber rationalNumber::operator/(const rationalNumber &rn) const{
     rationalNumber temp;
     temp.m_numerator = m_numerator*rn.m_denominator;
     temp.m_denominator = m_denominator*rn.m_numerator;
     return temp;
 }
 
-const rationalNumber rationalNumber::operator-(const rationalNumber &rn){
+rationalNumber rationalNumber::operator/(const double &x) const{
+    rationalNumber rn = convertRealToRatio(x, 20);
+    return *this/rn;
+}
+
+rationalNumber operator/(const double &x, const rationalNumber & rn){
+    rationalNumber rn2 = convertRealToRatio(x, 20);
+    return rn2/rn;
+}
+
+rationalNumber rationalNumber::operator-(const rationalNumber &rn) const{
     rationalNumber temp;
     temp.m_numerator = (m_numerator*rn.m_denominator)-(m_denominator*rn.m_numerator);
     temp.m_denominator = m_denominator*rn.m_denominator;
     return temp;
+}
+
+rationalNumber rationalNumber::operator-(const double &x) const{
+    rationalNumber rn(x, 1);
+    return *this-rn;
+}
+
+rationalNumber operator-(const double &x, const rationalNumber &rn){
+    rationalNumber rn2(x, 1);
+    return rn2-rn;
 }
 
 const rationalNumber rationalNumber::operator-(){
@@ -72,6 +111,28 @@ const rationalNumber rationalNumber::operator-(){
     temp.m_numerator = -1*m_numerator;
     temp.m_denominator = m_denominator;
     return temp;
+}
+
+rationalNumber rationalNumber::operator+=(const rationalNumber &rn){
+    *this = *this + rn;
+    return (*this).irreducible();
+}
+
+rationalNumber rationalNumber::operator+=(const double &x){
+    rationalNumber rn = convertRealToRatio(x, 20);
+    *this += rn;
+    return (*this).irreducible();
+}
+
+rationalNumber rationalNumber::operator-=(const rationalNumber &rn){
+    *this = *this - rn;
+    return (*this).irreducible();
+}
+
+rationalNumber rationalNumber::operator-=(const double &x){
+    rationalNumber rn = convertRealToRatio(x, 20);
+    *this -= rn;
+    return (*this).irreducible();
 }
 
 bool rationalNumber::operator==(const rationalNumber &rn) const{

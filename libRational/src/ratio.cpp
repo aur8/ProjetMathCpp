@@ -178,12 +178,16 @@ rationalNumber rationalNumber::square(){
 //le assert fonctionne pas
 rationalNumber rationalNumber::squareRoot(){
     //assert(m_numerator < 0 == true) && "SquareRoot of an negative number impossible !";
-    rationalNumber temp;
-    float x = sqrt(m_numerator);
-    float y = sqrt(m_denominator);
-    float res = x/y;
-    temp = convertRealToRatio(res,20);
-    return temp;
+    double x = sqrt(m_numerator);
+    double y = sqrt(m_denominator);
+    if (floor(x) == x && floor(y) == y){
+        return {(int)x, (unsigned int)y};
+    } else {
+        rationalNumber temp;
+        double res = x/y;
+        temp = convertRealToRatio(res,20);
+        return temp;
+    }
 }
 
 

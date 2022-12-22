@@ -250,10 +250,21 @@ std::ostream& operator<< (std::ostream& stream, const rationalNumber& rn) {
 
     return stream;
 }
-
+//pas sur de ça
 rationalNumber rationalNumber::rnCos(){
     rationalNumber temp;
     double res = cos (m_numerator/m_denominator);
     temp = convertRealToRatio(res,20);
     return temp;
+}
+//pas sur de ça
+rationalNumber rationalNumber::rnExp(){
+    rationalNumber temp;
+    double res = exp (m_numerator/m_denominator);
+    temp = convertRealToRatio(res,20);
+    return temp;
+}
+
+rationalNumber rationalNumber::rnLn(){
+    return log(m_numerator) - log(m_denominator);
 }

@@ -40,5 +40,6 @@ int main() {
     std::cout << "      Rational 13 -= Rational 9 : " << rn13 << std::endl;
     std::cout << "14 : Square root of : " << rn1 << " = " << rn1.squareRoot() << std::endl;
     std::cout << "15 : Cos of : " << rn1 << " = " << rn1.rnCos() << std::endl;
+    std::cout << "16 : Ln of : " << rn1 << " = " << rn1.rnLn() << std::endl;
     return 0;
 }

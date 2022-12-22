@@ -35,7 +35,8 @@ class rationalNumber {
     int integralPart();
     rationalNumber power(int k);
     rationalNumber rnCos();
-
+    rationalNumber rnExp();
+    rationalNumber rnLn();
     //operators
 
     rationalNumber & operator=(const rationalNumber &rn);

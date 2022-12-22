@@ -11,3 +11,12 @@ include_directories(${CMAKE_SOURCE_DIR}/libRational/include) # important : other
 #add rationalSamples
 message(STATUS "rationalSamples cmake part ..." )
 add_subdirectory(rationalSamples)
+
+#add myUnitTests
+find_package(GTest OPTIONAL_COMPONENTS)
+if(GTEST_FOUND)
+	message(STATUS "myUnitTests cmake part ..." )
+	add_subdirectory(myUnitTests)
+elseif()
+	message(WARNING "google test not found, skipping myTest ..." )
+endif()

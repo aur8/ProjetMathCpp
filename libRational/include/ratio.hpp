@@ -14,7 +14,6 @@ class rationalNumber {
 
     public :
 
-
     //constructor
     rationalNumber(const int numerator=0, const unsigned int denominator=1);
 

@@ -15,13 +15,18 @@ class rationalNumber {
     public :
 
     //constructor
-    rationalNumber(const int numerator=0, const unsigned int denominator=1);
+    explicit rationalNumber(int numerator=0, unsigned int denominator=1);
 
     rationalNumber(const rationalNumber &rn) = default;
 
     //destructor
 
     ~rationalNumber() = default;
+
+    // getters
+
+    [[nodiscard]] int getNumerator() const;
+    [[nodiscard]] int getDenominator() const;
 
     //methods
     void display() const;

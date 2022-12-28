@@ -10,6 +10,13 @@ rationalNumber::rationalNumber(const int numerator, const unsigned int denominat
     this->irreducible();
 }
 
+int rationalNumber::getNumerator() const{
+    return m_numerator;
+}
+
+int rationalNumber::getDenominator() const{
+    return (int)m_denominator;
+}
 
 
 rationalNumber & rationalNumber::operator=(const rationalNumber &rn){

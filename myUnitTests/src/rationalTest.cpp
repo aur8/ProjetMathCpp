@@ -1,7 +1,16 @@
-#include <gtest/gtest.h>
 #include <random>
 #include <algorithm>
+#include <gtest/gtest.h>
 #include "ratio.hpp"
+
+/////////////////////////////////////////////////////
+// constructors
+
+TEST (rationalConstructor, defaultConstructor) {
+    rationalNumber rn;
+    ASSERT_EQ(rn.getNumerator(), 0);
+    ASSERT_EQ(rn.getDenominator(), 1);
+}
 
 /*
 //fonctionne pas je sais pas pourquoi
@@ -39,14 +48,30 @@ TEST (rationalNumberArtihmetic, plus) {
 */
 
 TEST (rationalNumberArtihmetic1, plus) {
-  for(int run=0; run<100; ++run){
-  //generate data
-  rationalNumber rn1(3,4);
-  rationalNumber rn2(2,3);
-  rationalNumber rn3 = rn1 + rn2;
-  rationalNumber sum = (17,12);
-  ASSERT_EQ(rn3, sum);
-}
+    const int maxSize = 100;  // max size of numerators and denominators
+    std::mt19937 generator(0);
+    std::uniform_int_distribution<int> uniformIntDistribution(-maxSize,maxSize);
+    std::uniform_int_distribution<int> uniformUnsignedIntDistribution(1,maxSize);
+    std::uniform_real_distribution<double> uniformDistributionValue(-int(maxSize),maxSize);
+    auto gen = [&uniformDistributionValue, &generator](){ return uniformDistributionValue(generator);};
+
+
+    for(int run=0; run<100; ++run){
+
+        // generate random data
+        int num1 = uniformIntDistribution(generator);
+        unsigned int den1 = uniformUnsignedIntDistribution(generator);
+        int num2 = uniformIntDistribution(generator);
+        unsigned int den2 = uniformUnsignedIntDistribution(generator);
+
+        //generate data
+        rationalNumber rn1(num1,den1);
+        rationalNumber rn2(num2,den2);
+        rationalNumber rn3 = rn1 + rn2;
+        rationalNumber sum(((rn1.getNumerator()*rn2.getDenominator())+(rn1.getDenominator()*rn2.getNumerator())),(rn1.getDenominator()*rn2.getDenominator()));
+        ASSERT_GT(rn3.getDenominator(), 0);
+        ASSERT_EQ(rn3, sum);
+    }
 }
 
 /*

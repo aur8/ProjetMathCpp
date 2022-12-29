@@ -200,6 +200,33 @@ TEST (rationalNumberArtihmetic1, square) {
 }
 }
 
+TEST (rationalNumberArtihmetic1, logarithm) {
+
+    const int maxSize = 100;  // max size of numerators and denominators
+    std::mt19937 generator(0);
+    std::uniform_int_distribution<int> uniformIntDistribution(-maxSize,maxSize);
+    std::uniform_int_distribution<int> uniformUnsignedIntDistribution(1,maxSize);
+    std::uniform_real_distribution<double> uniformDistributionValue(-int(maxSize),maxSize);
+    auto gen = [&uniformDistributionValue, &generator](){ return uniformDistributionValue(generator);};
+
+
+    for(int run=0; run<100; ++run){
+
+        // generate random data
+        int num1 = uniformIntDistribution(generator);
+        unsigned int den1 = uniformUnsignedIntDistribution(generator);
+        int num2 = uniformIntDistribution(generator);
+        unsigned int den2 = uniformUnsignedIntDistribution(generator);
+
+        //generate data
+        rationalNumber rn1(num1,den1);
+        rationalNumber rn2 = rn1.rnLn();
+        rationalNumber logarithm = log(rn1.getNumerator()) - log(rn1.getDenominator());
+        ASSERT_GT(rn2.getDenominator(), 0);
+        ASSERT_EQ(rn2, logarithm);
+}
+}
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

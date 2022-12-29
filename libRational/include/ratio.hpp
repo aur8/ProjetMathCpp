@@ -15,7 +15,7 @@ class rationalNumber {
     public :
 
     //constructor
-    explicit rationalNumber(int numerator=0, unsigned int denominator=1);
+    rationalNumber(int numerator=0, unsigned int denominator=1);
 
     rationalNumber(const rationalNumber &rn) = default;
 

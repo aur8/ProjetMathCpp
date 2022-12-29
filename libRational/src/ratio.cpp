@@ -83,6 +83,7 @@ rationalNumber rationalNumber::operator/(const rationalNumber &rn) const{
     rationalNumber temp;
     temp.m_numerator = m_numerator*rn.m_denominator;
     temp.m_denominator = m_denominator*rn.m_numerator;
+    temp.irreducible();
     return temp;
 }
 
@@ -100,6 +101,7 @@ rationalNumber rationalNumber::operator-(const rationalNumber &rn) const{
     rationalNumber temp;
     temp.m_numerator = (m_numerator*rn.m_denominator)-(m_denominator*rn.m_numerator);
     temp.m_denominator = m_denominator*rn.m_denominator;
+    temp.irreducible();
     return temp;
 }
 

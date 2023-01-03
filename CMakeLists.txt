@@ -12,7 +12,7 @@ include_directories(${CMAKE_SOURCE_DIR}/libRational/include) # important : other
 message(STATUS "rationalSamples cmake part ..." )
 add_subdirectory(rationalSamples)
 
-# remplacer les parties suivantes par la partie commentée quand on a fini avec les tests
+# pour google test local
 
 # add google test
 message(STATUS "google test cmake part ..." )
@@ -21,6 +21,8 @@ add_subdirectory(googletest)
 # add myTest
 message(STATUS "myUnitTests cmake part ..." )
 add_subdirectory(myUnitTests)
+
+# pour google test installé
 
 #[[
 #add myUnitTests

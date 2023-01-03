@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 enable_testing()
 
-# remplacer la partie suivante par la partie commentée quand on a fini avec les tests
+# pour googletest local
 
 add_executable(myTest src/rationalTest.cpp)
 target_link_libraries(myTest gtest Rational)
@@ -10,6 +10,8 @@ target_compile_features(myTest PRIVATE cxx_std_14)
 
 add_test(NAME myTest
         COMMAND myTest)
+
+#pour googletest installé
 
 #[[find_package(GTest REQUIRED)
 include(GoogleTest)

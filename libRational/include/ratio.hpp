@@ -4,6 +4,7 @@
 #include <numeric>
 #include <fstream>
 #include <cassert>
+#include <stdexcept>
 
 class rationalNumber {
 
@@ -14,21 +15,18 @@ class rationalNumber {
 
     public :
 
-    //constructor
+    // Constructors
     rationalNumber(int numerator=0, unsigned int denominator=1);
-
     rationalNumber(const rationalNumber &rn) = default;
 
-    //destructor
-
+    // Destructors
     ~rationalNumber() = default;
 
-    // getters
-
+    // Getters
     [[nodiscard]] int getNumerator() const;
     [[nodiscard]] int getDenominator() const;
 
-    //methods
+    // Methods
     void display() const;
     rationalNumber irreducible();
     rationalNumber square();
@@ -38,11 +36,11 @@ class rationalNumber {
     rationalNumber absolute();
     int integralPart();
     rationalNumber power(int k);
-    rationalNumber rnCos();
-    rationalNumber rnExp();
-    rationalNumber rnLn();
-    //operators
+    [[nodiscard]] rationalNumber rnCos() const;
+    /*rationalNumber rnExp();
+    rationalNumber rnLn() const;*/
 
+    // Operators
     rationalNumber & operator=(const rationalNumber &rn);
     rationalNumber operator+(const rationalNumber &rn) const;
     rationalNumber operator+(const double &x) const;
@@ -115,6 +113,5 @@ rationalNumber convertRealToRatio(const T &x, const int &nb_iter){
         return {(int)x, 1};
     }
 
-    // x n'est ni un point flottant ni un entier, envoyer une exception
-    return 0;
+    throw std::invalid_argument("The variable to convert should be a integer or a floating point.");
 }
